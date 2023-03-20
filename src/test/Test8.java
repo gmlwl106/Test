@@ -1,25 +1,22 @@
 package test;
 
-/* 대문자와 소문자
-문자열 my_string이 매개변수로 주어질 때, 대문자는 소문자로 소문자는 대문자로 변환한 문자열을 return하도록 solution 함수를 완성해주세요.
+/* 세균 증식
+어떤 세균은 1시간에 두배만큼 증식한다고 합니다. 처음 세균의 마리수 n과 경과한 시간 t가 매개변수로 주어질 때 t시간 후 세균의 수를 return하도록 solution 함수를 완성해주세요.
  */
 
 public class Test8 {
-	public static String solution(String my_string) {
-        String answer = "";
-        for(int i=0; i<my_string.length(); i++) {
-        	if(Character.isUpperCase(my_string.charAt(i))) {
-        		answer += Character.toLowerCase(my_string.charAt(i));
-        	} else {
-        		answer += Character.toUpperCase(my_string.charAt(i));
-        	}
+	public static int solution(int n, int t) {
+        int answer = n;
+        for(int i=0; i<t; i++) {
+        	answer = answer * 2;
         }
         return answer;
     }
 
 	public static void main(String[] args) {
-		String my_string = "cccCCC";
-		System.out.println(solution(my_string));
+		int n = 2;
+		int t = 10;
+		System.out.println(solution(n, t));
 	}
 	
 }
